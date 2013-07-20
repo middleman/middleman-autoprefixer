@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Dominik Porada']
   spec.email         = ['dominik@porada.co']
   spec.summary       = 'Autoprefixer integration with Middleman'
-  spec.summary       = 'Automatically add vendor prefixes to CSS rules in the stylesheets ' +
+  spec.description   = 'Automatically add vendor prefixes to CSS rules in the stylesheets ' +
                        'served in your Middleman project using values from Can I Use.'
   spec.homepage      = 'https://github.com/porada/middleman-autoprefixer'
   spec.license       = 'MIT'
