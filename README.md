@@ -1,4 +1,4 @@
-# Middleman::Autoprefixer [![Dependency status](https://gemnasium.com/porada/middleman-autoprefixer.png)](https://gemnasium.com/porada/middleman-autoprefixer)
+# Middleman::Autoprefixer [![Gem version](https://badge.fury.io/rb/middleman-autoprefixer.png)](http://badge.fury.io/rb/middleman-autoprefixer) [![Dependency status](https://gemnasium.com/porada/middleman-autoprefixer.png)](https://gemnasium.com/porada/middleman-autoprefixer)
 
 > [Autoprefixer](https://github.com/ai/autoprefixer) integration with [Middleman](http://middlemanapp.com/)
 
