@@ -22,7 +22,17 @@ After installation, simply activate the extension in your project’s `config.rb
 activate :autoprefixer
 ```
 
-*Browser-specific configuration is planned for the future versions of the extension.*
+#### Browsers
+
+Optionally, you can specify `browsers` as a string or array of strings with accoradance to [Autoprefixer’s documentation](https://github.com/ai/autoprefixer#browsers). There are a few ways to set the option—two examples:
+
+```ruby
+activate :autoprefixer, browsers: 'last 1 version'
+
+activate :autoprefixer do |config|
+  config.browsers = ['last 2 versions', 'ie 8', 'ie 9']
+end
+```
 
 ## Credits
 
