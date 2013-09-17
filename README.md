@@ -27,10 +27,10 @@ activate :autoprefixer
 Optionally, you can specify `browsers` as a string or array of strings with accoradance to [Autoprefixer’s documentation](https://github.com/ai/autoprefixer#browsers). There are a few ways to set the option—two examples:
 
 ```ruby
-activate :autoprefixer, browsers: 'last 1 version'
+activate :autoprefixer, browsers: 'last 2 versions'
 
 activate :autoprefixer do |config|
-  config.browsers = ['last 2 versions', 'ie 8', 'ie 9']
+  config.browsers = ['> 1%', 'last 2 versions', 'ie 8', 'ie 9']
 end
 ```
 
