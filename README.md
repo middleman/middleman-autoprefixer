@@ -2,44 +2,24 @@
 
 # Middleman::Autoprefixer
 
-> [Autoprefixer](https://github.com/ai/autoprefixer) integration with [Middleman](http://middlemanapp.com/)
-
-Automatically add vendor prefixes to CSS rules in the stylesheets served in your Middleman project using values from [Can I Use](http://caniuse.com/).
+> Automatically add vendor prefixes to CSS rules in stylesheets served by Middleman.
 
 ## Usage
 
-### Installation
-
-Add the following line to your `Gemfile`, and then execute `bundle`.
+Add the following line to `Gemfile`, then run `bundle install`:
 
 ```ruby
 gem 'middleman-autoprefixer'
 ```
 
-### Configuration
-
-After installation, simply activate the extension in your project’s `config.rb`:
+After installation, activate the extension in `config.rb`:
 
 ```ruby
-activate :autoprefixer
+activate :autoprefixer, browsers: ['last 2 versions', 'ie 8', 'ie 9']
 ```
 
-#### Browsers
-
-Optionally, you can specify `browsers` as a string or array of strings with accoradance to [Autoprefixer’s documentation](https://github.com/ai/autoprefixer#browsers). There are a few ways to set the option—two examples:
-
-```ruby
-activate :autoprefixer, browsers: 'last 2 versions'
-
-activate :autoprefixer do |config|
-  config.browsers = ['> 1%', 'last 2 versions', 'ie 8', 'ie 9']
-end
-```
-
-## Credits
-
-This gem was created by [Dominik Porada](http://github.com/porada) and makes use of [Autoprefixer Rails](https://github.com/ai/autoprefixer-rails) by [Andrey Sitnik](https://github.com/ai), the author of Autoprefixer.
+The optional `browsers` field takes a string or array of strings accordingly to [Autoprefixer’s documentation](https://github.com/ai/autoprefixer#browsers).
 
 ## License
 
-Middleman Autoprefixer is distributed under the [MIT](http://porada.mit-license.org/) license.
+Middleman Autoprefixer was created by [Dominik Porada](http://github.com/porada) is distributed under The [MIT](http://porada.mit-license.org/) license.
