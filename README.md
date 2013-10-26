@@ -22,4 +22,4 @@ The optional `browsers` field takes a string or array of strings accordingly to 
 
 ## License
 
-Middleman Autoprefixer was created by [Dominik Porada](http://github.com/porada) is distributed under The [MIT](http://porada.mit-license.org/) license.
+Middleman Autoprefixer was created by [Dominik Porada](http://github.com/porada) is distributed under the [MIT](http://porada.mit-license.org/) license.
