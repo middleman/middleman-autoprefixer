@@ -1,3 +1,4 @@
+require 'ostruct'
 require 'autoprefixer-rails'
 
 module Middleman
