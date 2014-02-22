@@ -15,7 +15,7 @@ gem 'middleman-autoprefixer'
 After installation, activate the extension in `config.rb`:
 
 ```ruby
-activate :autoprefixer, browsers: ['last 2 versions', 'ie 8', 'ie 9']
+activate :autoprefixer, browsers: ['last 2 versions', 'Explorer >= 9']
 ```
 
 The optional `browsers` field takes a string or array of strings accordingly to [Autoprefixer’s documentation](https://github.com/ai/autoprefixer#browsers).
