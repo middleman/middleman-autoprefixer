@@ -13,13 +13,17 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
+  spec.test_files    = `git ls-files -- {features,fixtures}/*`.split($/)
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'middleman-core'
+  spec.add_dependency 'middleman'
   spec.add_dependency 'autoprefixer-rails', '~> 1.1.0'
 
   spec.add_development_dependency 'bundler', '~> 1.3'
   spec.add_development_dependency 'rake'
+
+  spec.add_development_dependency 'cucumber', '~> 1.3.10'
+  spec.add_development_dependency 'aruba', '~> 0.5.4'
 
   spec.post_install_message = <<-TEXT
 
