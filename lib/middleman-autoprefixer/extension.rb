@@ -14,7 +14,14 @@ module Middleman
         browsers = nil if browsers.empty?
 
         app.after_configuration do
-          AutoprefixerRails.install(sprockets, browsers)
+          autoprefixer = AutoprefixerRails::Processor.new(browsers)
+          sprockets.register_postprocessor 'text/css', :autoprefixer do |_, data|
+            begin
+              autoprefixer.process(data).css
+            rescue
+              data
+            end
+          end
         end
       end
       alias :included :registered

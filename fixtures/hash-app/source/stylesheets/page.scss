@@ -1,3 +1,5 @@
-a {
-  transition: color 0.25s ease-out;
+.box {
+  background: yellow;
+
+  @import "link";
 }
