@@ -9,7 +9,7 @@ module Middleman
         yield @@options if block_given?
 
         app.after_configuration do
-          Processor.new(@@options.browsers).configure(sprockets)
+          Processor.new(*@@options.params).configure(sprockets)
         end
       end
       alias :included :registered

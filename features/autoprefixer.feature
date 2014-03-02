@@ -17,3 +17,23 @@ Feature: Postprocessing stylesheets with Autoprefixer in different configuration
     When I go to "/stylesheets/page.css"
     Then I should see "-webkit-transition"
     And I should not see "-moz-transition"
+
+  Scenario: Cascading is on
+    Given the Server is running at "cascading-on-app"
+    When I go to "/stylesheets/page.css"
+    Then I should see:
+      """
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+      """
+
+  Scenario: Cascading is off
+    Given the Server is running at "cascading-off-app"
+    When I go to "/stylesheets/page.css"
+    Then I should see:
+      """
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      """
