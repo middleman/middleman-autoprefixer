@@ -24,6 +24,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'cucumber',  '~> 1.3.14'
   spec.add_development_dependency 'aruba',     '~> 0.5.4'
 
-  spec.add_development_dependency 'bundler',   '>= 1.6.2'
-  spec.add_development_dependency 'rake',      '>= 10.3.2'
+  spec.add_development_dependency 'bundler',   '>= 1.6'
+  spec.add_development_dependency 'rake',      '>= 10.3'
 end
