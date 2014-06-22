@@ -1,18 +1,18 @@
-require_relative 'options'
 require_relative 'processor'
 
 module Middleman
   module Autoprefixer
-    class << self
-      def registered(app, options_hash = {}, &block)
-        @@options = Options.new(options_hash)
-        yield @@options if block_given?
+    class Extension < ::Middleman::Extension
+      option :browsers
+      option :cascade
 
-        app.after_configuration do
-          Processor.new(*@@options.params).configure(sprockets)
-        end
+      def initialize(app, options_hash = {}, &block)
+        super
       end
-      alias :included :registered
+
+      def after_configuration
+        Processor.new(options).configure(app.sprockets)
+      end
     end
   end
 end
