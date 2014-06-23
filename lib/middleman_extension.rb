@@ -1,1 +1,1 @@
-require 'middleman-autoprefixer'
+require_relative 'middleman-autoprefixer'
