@@ -1,3 +1,5 @@
-body {
-  background: linear-gradient(to bottom, #fff, #000);
+@supports not (display: flex) {
+  body {
+    background: linear-gradient(to bottom, #fff, #000);
+  }
 }
