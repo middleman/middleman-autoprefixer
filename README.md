@@ -1,5 +1,4 @@
-[![Gem version](http://img.shields.io/gem/v/middleman-autoprefixer.svg)](http://badge.fury.io/rb/middleman-autoprefixer) [![Build status](http://img.shields.io/travis/porada/middleman-autoprefixer.svg)](https://travis-ci.org/porada/middleman-autoprefixer) [![Dependency status](http://img.shields.io/gemnasium/porada/middleman-autoprefixer.svg)](https://gemnasium.com/porada/middleman-autoprefixer) [![Code Climate](http://img.shields.io/codeclimate/github/porada/middleman-autoprefixer.svg
-)](https://codeclimate.com/github/porada/middleman-autoprefixer)
+[![Gem version](http://img.shields.io/gem/v/middleman-autoprefixer.svg?style=flat)](http://badge.fury.io/rb/middleman-autoprefixer) [![Build status](http://img.shields.io/travis/porada/middleman-autoprefixer.svg?style=flat)](https://travis-ci.org/porada/middleman-autoprefixer) [![Dependency status](http://img.shields.io/gemnasium/porada/middleman-autoprefixer.svg?style=flat)](https://gemnasium.com/porada/middleman-autoprefixer) [![Code Climate](http://img.shields.io/codeclimate/github/porada/middleman-autoprefixer.svg?style=flat)](https://codeclimate.com/github/porada/middleman-autoprefixer)
 
 # Middleman::Autoprefixer
 
