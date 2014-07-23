@@ -6,6 +6,12 @@ Feature: Postprocessing stylesheets with Autoprefixer in different configuration
     Then I should not see "-ms-border-radius"
     And I should see "border-radius"
 
+  Scenario: Inline html
+    Given the Server is running at "inline-app"
+    When I go to "/index.html"
+    Then I should not see "-ms-border-radius"
+    And I should see "border-radius"
+
   Scenario: Passing options in a block
     Given the Server is running at "block-app"
     When I go to "/stylesheets/page.css"
