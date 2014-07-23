@@ -39,3 +39,9 @@ Feature: Postprocessing stylesheets with Autoprefixer in different configuration
         -moz-box-sizing: border-box;
         box-sizing: border-box;
       """
+
+  Scenario: Inline HTML
+    Given the Server is running at "inline-app"
+    When I go to "/index.html"
+    Then I should not see "-ms-border-radius"
+    And I should see "border-radius"
