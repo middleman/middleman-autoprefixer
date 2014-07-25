@@ -6,8 +6,8 @@ require 'middleman-autoprefixer/version'
 Gem::Specification.new do |spec|
   spec.name          = 'middleman-autoprefixer'
   spec.version       = Middleman::Autoprefixer::VERSION
-  spec.authors       = ['Dominik Porada']
-  spec.email         = ['dominik@porada.co']
+  spec.authors       = ['Dominik Porada', 'Thomas Reynolds']
+  spec.email         = ['dominik@porada.co', 'me@tdreyno.com']
   spec.summary       = 'Autoprefixer integration with Middleman'
   spec.homepage      = 'https://github.com/porada/middleman-autoprefixer'
   spec.license       = 'MIT'
