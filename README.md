@@ -20,16 +20,32 @@ activate :autoprefixer
 
 ## Configuration
 
-The extension has 2 optionally configurable fields:
+The extension has 4 optionally configurable fields:
 
 ```ruby
 activate :autoprefixer do |config|
   config.browsers = ['last 2 versions', 'Explorer >= 9']
   config.cascade  = false
+  config.inline   = true
+  config.ignore   = ['hacks.css']
 end
 ```
 
-Both fields take values (and use defaults) accordingly to [Autoprefixer’s](https://github.com/ai/autoprefixer#browsers) [documentation](https://github.com/ai/autoprefixer#visual-cascade).
+### browsers
+
+The list of targeted browsers. Takes values and uses defaults accordingly to [Autoprefixer’s documentation](https://github.com/ai/autoprefixer#browsers).
+
+### cascade
+
+The visual cascade of prefixed properties: `true` or `false`.  Uses the default value accordingly to [Autoprefixer’s documentation](https://github.com/ai/autoprefixer#visual-cascade).
+
+### inline
+
+Whether to prefix inline styles within HTML files: `true` or `false`. Disabled by default.
+
+### ignore
+
+The array of patterns or paths to exclude from prefixing. Empty by default.
 
 ## License
 
