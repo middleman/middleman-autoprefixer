@@ -20,7 +20,7 @@ module Middleman
                       inline: options[:inline],
                       ignore: options[:ignore]
       end
-      
+
       # Rack middleware to look for CSS and apply prefixes.
       class Rack
         INLINE_CSS_REGEX = /(<style[^>]*>\s*(?:\/\*<!\[CDATA\[\*\/\n)?)(.*?)((?:(?:\n\s*)?\/\*\]\]>\*\/)?\s*<\/style>)/m
@@ -64,10 +64,8 @@ module Middleman
         private
 
         def process(css)
-          config = {
-            browsers: Array(@browsers)
-          }
-
+          config = {}
+          config[:browsers] = Array(@browsers)
           config[:cascade] = @cascade unless @cascade.nil?
 
           ::AutoprefixerRails.process(css, config).css

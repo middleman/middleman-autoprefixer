@@ -5,6 +5,8 @@ Feature: Postprocessing stylesheets with Autoprefixer in different configuration
     When I go to "/stylesheets/page.css"
     Then I should not see "-ms-border-radius"
     And I should see "border-radius"
+    When I go to "/index.html"
+    Then I should see "-ms-border-radius"
 
   Scenario: Passing options in a block
     Given the Server is running at "block-app"
@@ -43,5 +45,13 @@ Feature: Postprocessing stylesheets with Autoprefixer in different configuration
   Scenario: Inline HTML
     Given the Server is running at "inline-app"
     When I go to "/index.html"
+    Then I should not see "-ms-border-radius"
+    And I should see "border-radius"
+
+  Scenario: Ignoring paths
+    Given the Server is running at "ignore-app"
+    When I go to "/stylesheets/yep.css"
+    Then I should see "-ms-border-radius"
+    When I go to "/stylesheets/nope.css"
     Then I should not see "-ms-border-radius"
     And I should see "border-radius"
