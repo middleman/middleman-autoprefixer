@@ -28,12 +28,14 @@ module Middleman
         # Init
         # @param [Class] app
         # @param [Hash] options
-        def initialize(app, options={})
+        def initialize(app, options = {})
           @app = app
-          @browsers = options[:browsers]
+          @browsers = Array(options[:browsers])
           @cascade = options[:cascade]
           @inline = options[:inline]
           @ignore = options[:ignore]
+
+          initialize_autoprefixer
         end
 
         # Rack interface
@@ -63,12 +65,23 @@ module Middleman
 
         private
 
-        def process(css)
+        def initialize_autoprefixer
           config = {}
-          config[:browsers] = Array(@browsers)
           config[:cascade] = @cascade unless @cascade.nil?
 
-          ::AutoprefixerRails.process(css, config).css
+          @autoprefixer = ::AutoprefixerRails::Processor.new(@browsers, config)
+        end
+
+        def process(content)
+          begin
+            @autoprefixer.process(content).css
+          rescue ExecJS::ProgramError => error
+            if error.message =~ /Can't parse CSS/
+              content
+            else
+              raise error
+            end
+          end
         end
 
         def inline_html_content?(path)
