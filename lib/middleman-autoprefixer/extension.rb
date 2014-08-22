@@ -6,7 +6,7 @@ module Middleman
       option :inline, false, 'Whether to prefix CSS inline within HTML files'
       option :ignore, [], 'Patterns to avoid prefixing'
 
-      def initialize(app, options={}, &block)
+      def initialize(app, options = {}, &block)
         super
 
         require 'middleman-core/util'
@@ -30,7 +30,7 @@ module Middleman
         # @param [Hash] options
         def initialize(app, options = {})
           @app = app
-          @browsers = Array(options[:browsers])
+          @browsers = options[:browsers]
           @cascade = options[:cascade]
           @inline = options[:inline]
           @ignore = options[:ignore]
@@ -67,9 +67,10 @@ module Middleman
 
         def initialize_autoprefixer
           config = {}
-          config[:cascade] = @cascade unless @cascade.nil?
+          config[:browsers] = Array(@browsers)
+          config[:cascade]  = @cascade unless @cascade.nil?
 
-          @autoprefixer = ::AutoprefixerRails::Processor.new(@browsers, config)
+          @autoprefixer = ::AutoprefixerRails::Processor.new(config)
         end
 
         def process(content)
