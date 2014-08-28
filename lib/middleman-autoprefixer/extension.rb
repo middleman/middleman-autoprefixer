@@ -41,21 +41,11 @@ module Middleman
         # @return [Array]
         def call(env)
           status, headers, response = @app.call(env)
+          prefixed = process(response, env['PATH_INFO'])
 
-          if inline_html_content?(env['PATH_INFO'])
-            prefixed = ::Middleman::Util.extract_response_text(response)
-
-            prefixed.gsub!(INLINE_CSS_REGEX) do
-              $1 << process($2) << $3
-            end
-
+          if prefixed.is_a?(String)
             headers['Content-Length'] = ::Rack::Utils.bytesize(prefixed).to_s
             response = [prefixed]
-          elsif standalone_css_content?(env['PATH_INFO'])
-            prefixed_css = process(::Middleman::Util.extract_response_text(response))
-
-            headers['Content-Length'] = ::Rack::Utils.bytesize(prefixed_css).to_s
-            response = [prefixed_css]
           end
 
           [status, headers, response]
@@ -63,12 +53,32 @@ module Middleman
 
         private
 
-        def process(content)
+        def process(response, path)
+          if standalone_css_content?(path)
+            prefix(extract_styles(response))
+          elsif inline_html_content?(path)
+            prefix_inline_styles(extract_styles(response))
+          else
+            nil
+          end
+        end
+
+        def prefix(content)
           config = {}
           config[:browsers] = Array(@browsers)
           config[:cascade]  = @cascade unless @cascade.nil?
 
           ::AutoprefixerRails.process(content, config).css
+        end
+
+        def prefix_inline_styles(content)
+          content = content.dup
+          content.gsub!(INLINE_CSS_REGEX) { $1 << prefix($2) << $3 }
+          content
+        end
+
+        def extract_styles(response)
+          ::Middleman::Util.extract_response_text(response)
         end
 
         def inline_html_content?(path)

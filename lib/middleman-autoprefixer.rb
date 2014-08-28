@@ -1,5 +1,4 @@
 require 'middleman-core'
-
 require_relative 'middleman-autoprefixer/version'
 
 ::Middleman::Extensions.register(:autoprefixer) do
