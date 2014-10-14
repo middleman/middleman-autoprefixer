@@ -55,3 +55,12 @@ Feature: Postprocessing stylesheets with Autoprefixer in different configuration
     When I go to "/stylesheets/nope.css"
     Then I should not see "-ms-border-radius"
     And I should see "border-radius"
+
+  Scenario: With arbitrary proxy paths
+    Given the Server is running at "proxy-app"
+    When I go to "/proxy"
+    Then I should not see "-ms-border-radius"
+    And I should see "border-radius"
+    When I go to "/proxy-inline"
+    Then I should not see "-ms-border-radius"
+    And I should see "border-radius"
