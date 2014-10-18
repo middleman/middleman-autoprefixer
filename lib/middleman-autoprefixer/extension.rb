@@ -65,7 +65,7 @@ module Middleman
 
         def prefix(content)
           config = {}
-          config[:browsers] = Array(@browsers)
+          config[:browsers] = Array(@browsers) unless @browsers.nil?
           config[:cascade]  = @cascade unless @cascade.nil?
 
           ::AutoprefixerRails.process(content, config).css
