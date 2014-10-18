@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Dominik Porada', 'Thomas Reynolds']
   spec.email         = ['dominik@porada.co', 'me@tdreyno.com']
   spec.summary       = 'Autoprefixer integration with Middleman'
-  spec.homepage      = 'https://github.com/porada/middleman-autoprefixer'
+  spec.homepage      = 'https://github.com/middleman/middleman-autoprefixer'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
