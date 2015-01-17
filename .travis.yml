@@ -1,7 +1,8 @@
 language: ruby
 rvm:
   - 2.0.0
-  - 2.1.2
+  - 2.1.5
+  - 2.2.0
 script:
   - bundle install
   - bundle exec rake test
