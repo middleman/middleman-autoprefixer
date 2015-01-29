@@ -33,11 +33,11 @@ end
 
 ### browsers
 
-The list of targeted browsers. Takes values and uses defaults accordingly to [Autoprefixer’s documentation](https://github.com/ai/autoprefixer#browsers).
+The list of targeted browsers. Takes values and uses defaults accordingly to [Autoprefixer’s documentation](https://github.com/postcss/autoprefixer#browsers).
 
 ### cascade
 
-The visual cascade of prefixed properties: `true` or `false`.  Uses the default value accordingly to [Autoprefixer’s documentation](https://github.com/ai/autoprefixer#visual-cascade).
+The visual cascade of prefixed properties: `true` or `false`.  Uses the default value accordingly to [Autoprefixer’s documentation](https://github.com/postcss/autoprefixer#visual-cascade).
 
 ### inline
 
