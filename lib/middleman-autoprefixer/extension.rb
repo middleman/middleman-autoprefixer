@@ -86,7 +86,7 @@ module Middleman
         end
 
         def inline_html_content?(type, path)
-          (type == 'text/html' || path.end_with?('.php')) && @inline
+          type == 'text/html' && @inline
         end
 
         def standalone_css_content?(type, path)
