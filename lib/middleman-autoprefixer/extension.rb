@@ -41,7 +41,11 @@ module Middleman
         # @return [Array]
         def call(env)
           status, headers, response = @app.call(env)
-          prefixed = process(response, env['PATH_INFO'])
+
+          type = headers['Content-Type'].split(';').first
+          path = env['PATH_INFO']
+
+          prefixed = process(response, type, path)
 
           if prefixed.is_a?(String)
             headers['Content-Length'] = ::Rack::Utils.bytesize(prefixed).to_s
@@ -53,10 +57,10 @@ module Middleman
 
         private
 
-        def process(response, path)
-          if standalone_css_content?(path)
+        def process(response, type, path)
+          if standalone_css_content?(type, path)
             prefix(extract_styles(response))
-          elsif inline_html_content?(path)
+          elsif inline_html_content?(type, path)
             prefix_inline_styles(extract_styles(response))
           else
             nil
@@ -81,12 +85,12 @@ module Middleman
           ::Middleman::Util.extract_response_text(response)
         end
 
-        def inline_html_content?(path)
-          (path.end_with?('.html') || path.end_with?('.php')) && @inline
+        def inline_html_content?(type, path)
+          (type == 'text/html' || path.end_with?('.php')) && @inline
         end
 
-        def standalone_css_content?(path)
-          path.end_with?('.css') && @ignore.none? { |ignore| ::Middleman::Util.path_match(ignore, path) }
+        def standalone_css_content?(type, path)
+          type == 'text/css' && @ignore.none? { |ignore| ::Middleman::Util.path_match(ignore, path) }
         end
       end
     end
