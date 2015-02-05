@@ -42,7 +42,7 @@ module Middleman
         def call(env)
           status, headers, response = @app.call(env)
 
-          type = headers['Content-Type'].split(';').first
+          type = headers.fetch('Content-Type', 'application/octet-stream').split(';').first
           path = env['PATH_INFO']
 
           prefixed = process(response, type, path)
