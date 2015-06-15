@@ -10,7 +10,8 @@ module Middleman
         super
 
         require 'middleman-core/util'
-        require 'autoprefixer-rails'
+        require 'autoprefixer-rails/result'
+        require 'autoprefixer-rails/processor'
       end
 
       def after_configuration
@@ -34,6 +35,11 @@ module Middleman
           @cascade = options[:cascade]
           @inline = options[:inline]
           @ignore = options[:ignore]
+
+          config = {}
+          config[:browsers] = Array(@browsers) unless @browsers.nil?
+          config[:cascade]  = @cascade unless @cascade.nil?
+          @processor = ::AutoprefixerRails::Processor.new(config)
         end
 
         # Rack interface
@@ -59,7 +65,7 @@ module Middleman
 
         def process(response, type, path)
           if standalone_css_content?(type, path)
-            prefix(extract_styles(response))
+            prefix(extract_styles(response), path)
           elsif inline_html_content?(type, path)
             prefix_inline_styles(extract_styles(response))
           else
@@ -67,12 +73,8 @@ module Middleman
           end
         end
 
-        def prefix(content)
-          config = {}
-          config[:browsers] = Array(@browsers) unless @browsers.nil?
-          config[:cascade]  = @cascade unless @cascade.nil?
-
-          ::AutoprefixerRails.process(content, config).css
+        def prefix(content, path = nil)
+          @processor.process(content, path ? { from: path } : {}).css
         end
 
         def prefix_inline_styles(content)
