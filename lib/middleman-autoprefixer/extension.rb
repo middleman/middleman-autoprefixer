@@ -1,10 +1,11 @@
 module Middleman
   module Autoprefixer
     class Extension < ::Middleman::Extension
-      option :browsers, nil, 'Supported browsers'
-      option :cascade, nil, 'Should it cascade'
-      option :inline, false, 'Whether to prefix CSS inline within HTML files'
-      option :ignore, [], 'Patterns to avoid prefixing'
+      option :browsers, nil, 'Supported browsers (see https://github.com/ai/browserslist)'
+      option :cascade, true, 'Align prefixed properties'
+      option :inline, false, 'Prefix inline CSS within HTML files'
+      option :remove, true, 'Remove outdated CSS prefixes'
+      option :ignore, [], 'File patterns to avoid prefixing'
 
       def initialize(app, options = {}, &block)
         super
@@ -16,10 +17,7 @@ module Middleman
 
       def after_configuration
         # Setup Rack middleware to apply prefixes
-        app.use Rack, browsers: options[:browsers],
-                      cascade: options[:cascade],
-                      inline: options[:inline],
-                      ignore: options[:ignore]
+        app.use Rack, options
       end
 
       # Rack middleware to look for CSS and apply prefixes.
@@ -31,14 +29,13 @@ module Middleman
         # @param [Hash] options
         def initialize(app, options = {})
           @app = app
-          @browsers = options[:browsers]
-          @cascade = options[:cascade]
           @inline = options[:inline]
           @ignore = options[:ignore]
 
           config = {}
-          config[:browsers] = Array(@browsers) unless @browsers.nil?
-          config[:cascade]  = @cascade unless @cascade.nil?
+          config[:browsers] = Array(options[:browsers])
+          config[:cascade] = options[:cascade]
+          config[:remove] = options[:remove]
           @processor = ::AutoprefixerRails::Processor.new(config)
         end
 
