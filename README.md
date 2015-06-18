@@ -20,11 +20,12 @@ activate :autoprefixer
 
 ## Configuration
 
-The extension has 4 optionally configurable fields:
+The extension has 5 optionally configurable fields:
 
 ```ruby
 activate :autoprefixer do |config|
   config.browsers = ['last 2 versions', 'Explorer >= 9']
+  config.remove   = false
   config.cascade  = false
   config.inline   = true
   config.ignore   = ['hacks.css']
@@ -34,6 +35,10 @@ end
 ### browsers
 
 The list of targeted browsers. Takes values and uses defaults accordingly to [Autoprefixer’s documentation](https://github.com/postcss/autoprefixer#browsers).
+
+### remove
+
+Whether to remove outdated prefixes: `true` or `false`. Enabled by default.
 
 ### cascade
 
