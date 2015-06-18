@@ -1,3 +1,8 @@
+# v2.5.0
+
+* Added support for the `remove` option.
+* Performance improvements and better error handling ([#19](https://github.com/middleman/middleman-autoprefixer/issues/19)).
+
 # v2.4.4
 
 * Updated Autoprefixer.
