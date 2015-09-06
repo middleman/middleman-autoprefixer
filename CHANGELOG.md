@@ -1,3 +1,8 @@
+# v2.6.0
+
+* Updated Autoprefixer to 6.0.
+* Added support for the `add` option.
+
 # v2.5.0
 
 * Added support for the `remove` option.
