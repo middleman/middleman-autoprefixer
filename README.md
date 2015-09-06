@@ -12,25 +12,20 @@ Add the following line to `Gemfile`, then run `bundle install`:
 gem 'middleman-autoprefixer'
 ```
 
-After installation, activate the extension in `config.rb`:
+After installation, activate (and optionally configure) the extension in `config.rb`:
 
 ```ruby
 activate :autoprefixer
 ```
 
-## Configuration
-
-The extension has 5 optionally configurable fields:
-
 ```ruby
 activate :autoprefixer do |config|
   config.browsers = ['last 2 versions', 'Explorer >= 9']
-  config.remove   = false
-  config.cascade  = false
-  config.inline   = true
   config.ignore   = ['hacks.css']
 end
 ```
+
+## Available options
 
 ### browsers
 
