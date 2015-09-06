@@ -36,21 +36,25 @@ end
 
 The list of targeted browsers. Takes values and uses defaults accordingly to [Autoprefixer’s documentation](https://github.com/postcss/autoprefixer#browsers).
 
+### add
+
+Whether to add vendor prefixes: `true` or `false`. Enabled by default.
+
 ### remove
 
 Whether to remove outdated prefixes: `true` or `false`. Enabled by default.
 
 ### cascade
 
-The visual cascade of prefixed properties: `true` or `false`.  Uses the default value accordingly to [Autoprefixer’s documentation](https://github.com/postcss/autoprefixer#visual-cascade).
+The visual cascade of prefixed properties: `true` or `false`. Enabled by default.
 
 ### inline
 
-Whether to prefix inline styles within HTML files: `true` or `false`. Disabled by default.
+Whether to process inline styles within HTML files: `true` or `false`. Disabled by default.
 
 ### ignore
 
-The array of patterns or paths to exclude from prefixing. Empty by default.
+The array of patterns or paths to exclude from processing. Empty by default.
 
 ## License
 

@@ -22,6 +22,12 @@ Feature: Postprocessing stylesheets with Autoprefixer in different configuration
     Then I should see "-webkit-transition"
     And I should not see "-moz-transition"
 
+  Scenario: Adding is off
+    Given the Server is running at "adding-off-app"
+    When I go to "/stylesheets/page.css"
+    Then I should not see "-webkit-transition"
+    And I should not see "-moz-transition"
+
   Scenario: Removing is off
     Given the Server is running at "removing-off-app"
     When I go to "/stylesheets/page.css"
