@@ -34,7 +34,7 @@ module Middleman
           @ignore = options[:ignore]
 
           @processor = ::AutoprefixerRails::Processor.new({
-            browsers: Array(options[:browsers]),
+            browsers: options[:browsers] && Array(options[:browsers]),
             add:      options[:add],
             remove:   options[:remove],
             cascade:  options[:cascade]
