@@ -62,7 +62,9 @@ Feature: Postprocessing stylesheets with Autoprefixer in different configuration
 
   Scenario: Ignoring paths
     Given the Server is running at "ignore-app"
-    When I go to "/stylesheets/yep.css"
+    When I go to "/stylesheets/yep-1.css"
+    Then I should see "-ms-border-radius"
+    When I go to "/stylesheets/yep-2.css"
     Then I should see "-ms-border-radius"
     When I go to "/stylesheets/nope.css"
     Then I should not see "-ms-border-radius"

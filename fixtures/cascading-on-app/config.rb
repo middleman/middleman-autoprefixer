@@ -3,6 +3,9 @@ activate :autoprefixer do |config|
   config.cascade  = true
 end
 
-compass_config do |config|
-  config.output_style = :expanded
+# Middleman 3
+if defined? compass_config
+  compass_config do |config|
+    config.output_style = :expanded
+  end
 end
