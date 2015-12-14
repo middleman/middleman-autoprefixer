@@ -2,6 +2,9 @@ language: ruby
 rvm:
   - 2.1
   - 2.2
+gemfile:
+  - Gemfile
+  - Gemfile4
 script:
   - bundle exec rake test
   - bundle exec rake install

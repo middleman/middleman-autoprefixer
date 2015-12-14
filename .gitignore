@@ -2,8 +2,10 @@
 *.rbc
 .bundle
 .config
+.sass-cache
 .yardoc
 Gemfile.lock
+Gemfile4.lock
 InstalledFiles
 _yardoc
 coverage
