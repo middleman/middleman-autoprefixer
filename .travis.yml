@@ -7,7 +7,8 @@ gemfile:
   - Gemfile4
 script:
   - bundle exec rake test
-  - bundle exec rake install
+env:
+  - RUBYOPT=W0
 sudo: false
 cache: bundler
 matrix:
