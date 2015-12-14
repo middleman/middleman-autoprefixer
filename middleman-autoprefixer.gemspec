@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'middleman-core',        '>= 3.3.3'
-  spec.add_dependency 'autoprefixer-rails',    '~> 6.0.1'
+  spec.add_dependency 'autoprefixer-rails',    '~> 6.1.2'
 
   spec.add_development_dependency 'middleman', '>= 3.3.3'
   spec.add_development_dependency 'cucumber',  '~> 1.3'
