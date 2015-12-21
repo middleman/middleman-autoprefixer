@@ -1,3 +1,7 @@
+# v2.6.3
+
+* Updated Autoprefixer.
+
 # v2.6.2
 
 * Updated Autoprefixer.
