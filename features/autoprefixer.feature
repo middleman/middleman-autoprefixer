@@ -11,9 +11,7 @@ Feature: Postprocessing stylesheets with Autoprefixer in different configuration
   Scenario: Passing options in a block
     Given the Server is running at "block-app"
     When I go to "/stylesheets/page.css"
-    Then I should see "-webkit-flex"
-    And I should see "-moz-box"
-    And I should see "-webkit-linear-gradient"
+    Then I should see "-webkit-linear-gradient"
     And I should see "-moz-linear-gradient"
 
   Scenario: Passing options in a hash
