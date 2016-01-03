@@ -1,8 +1,8 @@
-[![Gem version](http://img.shields.io/gem/v/middleman-autoprefixer.svg?style=flat)](http://badge.fury.io/rb/middleman-autoprefixer) [![Build status](http://img.shields.io/travis/middleman/middleman-autoprefixer.svg?style=flat)](https://travis-ci.org/middleman/middleman-autoprefixer) [![Coveralls](http://img.shields.io/coveralls/middleman/middleman-autoprefixer.svg?style=flat)](https://coveralls.io/r/middleman/middleman-autoprefixer) [![Dependency status](http://img.shields.io/gemnasium/middleman/middleman-autoprefixer.svg?style=flat)](https://gemnasium.com/middleman/middleman-autoprefixer) [![Code Climate](http://img.shields.io/codeclimate/github/middleman/middleman-autoprefixer.svg?style=flat)](https://codeclimate.com/github/middleman/middleman-autoprefixer)
+[![Gem version](https://img.shields.io/gem/v/middleman-autoprefixer.svg)](https://rubygems.org/gems/middleman-autoprefixer) [![Build status](https://img.shields.io/travis/middleman/middleman-autoprefixer.svg)](https://travis-ci.org/middleman/middleman-autoprefixer) [![Coveralls](https://img.shields.io/coveralls/middleman/middleman-autoprefixer.svg)](https://coveralls.io/r/middleman/middleman-autoprefixer) [![Dependency status](https://img.shields.io/gemnasium/middleman/middleman-autoprefixer.svg)](https://gemnasium.com/middleman/middleman-autoprefixer)
 
 # Middleman::Autoprefixer
 
-> Automatically add vendor prefixes to CSS rules in stylesheets served by Middleman.
+> Automatically vendor-prefix stylesheets served by Middleman.
 
 ## Usage
 
@@ -53,4 +53,4 @@ The array of patterns or paths to exclude from processing. Empty by default.
 
 ## License
 
-Middleman Autoprefixer was created by [Dominik Porada](http://github.com/porada) is distributed under the [MIT](http://porada.mit-license.org/) license.
+Middleman Autoprefixer was created by [Dominik Porada](https://github.com/porada) is distributed under the [MIT](http://porada.mit-license.org/) license.

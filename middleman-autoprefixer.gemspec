@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Middleman::Autoprefixer::VERSION
   spec.authors       = ['Dominik Porada', 'Thomas Reynolds']
   spec.email         = ['dominik@porada.co', 'me@tdreyno.com']
-  spec.summary       = 'Autoprefixer integration with Middleman'
+  spec.summary       = 'Automatically vendor-prefix stylesheets served by Middleman.'
   spec.homepage      = 'https://github.com/middleman/middleman-autoprefixer'
   spec.license       = 'MIT'
 
