@@ -1,3 +1,8 @@
+# v2.7.0
+
+* Updated Autoprefixer.
+* Loosely defined the dependency version—`bundle update` should do the trick next time.
+
 # v2.6.3
 
 * Updated Autoprefixer.
