@@ -77,9 +77,7 @@ module Middleman
         end
 
         def prefix_inline_styles(content)
-          content = content.dup
-          content.gsub!(INLINE_CSS_REGEX) { $1 << prefix($2) << $3 }
-          content
+          content.gsub(INLINE_CSS_REGEX) { $1 << prefix($2) << $3 }
         end
 
         def extract_styles(response)
