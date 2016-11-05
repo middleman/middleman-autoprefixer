@@ -53,7 +53,7 @@ module Middleman
           prefixed = process(response, type, path)
 
           if prefixed.is_a?(String)
-            headers['Content-Length'] = ::Rack::Utils.bytesize(prefixed).to_s
+            headers['Content-Length'] = prefixed.bytesize.to_s
             response = [prefixed]
           end
 
