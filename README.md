@@ -53,4 +53,4 @@ The array of patterns or paths to exclude from processing. Empty by default.
 
 ## License
 
-Middleman Autoprefixer was created by [Dominik Porada](https://github.com/porada) is distributed under the [MIT](http://porada.mit-license.org/) license.
+Middleman Autoprefixer was created by [Dominik Porada](https://github.com/porada) and is distributed under the [MIT](http://porada.mit-license.org/) license.
