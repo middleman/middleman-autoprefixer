@@ -1,3 +1,7 @@
+# v2.6.0
+
+* Updated Autoprefixer to 7.0.
+
 # v2.7.1
 
 * Bug fixes ([#26](https://github.com/middleman/middleman-autoprefixer/issues/26)).
