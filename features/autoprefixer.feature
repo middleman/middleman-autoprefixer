@@ -48,8 +48,8 @@ Feature: Postprocessing stylesheets with Autoprefixer in different configuration
     Then I should see:
       """
         -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
       """
 
   Scenario: Inline HTML

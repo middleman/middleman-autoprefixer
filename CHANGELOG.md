@@ -1,6 +1,7 @@
 # v2.10.0
 
 * Updated Autoprefixer to 9.1.
+* Add config for `grid`, `supports` and `flexbox` options.
 
 # v2.9.0
 
