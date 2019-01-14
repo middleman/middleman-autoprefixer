@@ -7,6 +7,9 @@ module Middleman
       option :cascade,  true,  'Align prefixed properties'
       option :inline,   false, 'Process inline CSS within HTML files'
       option :ignore,   [],    'File patterns to avoid processing'
+      option :grid,     true,  'Enable -ms- prefixes for Grid Layout'
+      option :supports, false, 'Disable @supports parameters prefixing'
+      option :flexbox,  false, 'Disable flexbox properties prefixing'
 
       def initialize(app, options = {}, &block)
         super
@@ -37,7 +40,9 @@ module Middleman
             browsers: options[:browsers] && Array(options[:browsers]),
             add:      options[:add],
             remove:   options[:remove],
-            cascade:  options[:cascade]
+            grid:     options[:grid],
+            supports: options[:supports],
+            flexbox:  options[:flexbox]
           })
         end
 
