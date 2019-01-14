@@ -1,3 +1,7 @@
+# v2.10.0
+
+* Updated Autoprefixer to 9.1.
+
 # v2.9.0
 
 * Updated Autoprefixer to 8.0.
