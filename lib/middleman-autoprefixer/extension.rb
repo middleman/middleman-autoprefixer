@@ -21,7 +21,7 @@ module Middleman
 
       def after_configuration
         # Setup Rack middleware to apply prefixes
-        app.use Rack, options
+        app.use Rack, config: options, middleman_app: @app
       end
 
       # Rack middleware to look for CSS and apply prefixes.
@@ -33,16 +33,18 @@ module Middleman
         # @param [Hash] options
         def initialize(app, options = {})
           @app = app
-          @inline = options[:inline]
-          @ignore = options[:ignore]
+          @middleman_app = options.fetch(:middleman_app)
+          @config = options.fetch(:config)
+          @inline = @config[:inline]
+          @ignore = @config[:ignore]
 
           @processor = ::AutoprefixerRails::Processor.new({
-            browsers: options[:browsers] && Array(options[:browsers]),
-            add:      options[:add],
-            remove:   options[:remove],
-            grid:     options[:grid],
-            supports: options[:supports],
-            flexbox:  options[:flexbox]
+            browsers: @config[:browsers] && Array(@config[:browsers]),
+            add:      @config[:add],
+            remove:   @config[:remove],
+            grid:     @config[:grid],
+            supports: @config[:supports],
+            flexbox:  @config[:flexbox]
           })
         end
 
@@ -79,6 +81,9 @@ module Middleman
 
         def prefix(content, path = nil)
           @processor.process(content, path ? { from: path } : {}).css
+        rescue => e
+          @middleman_app.logger.error(e.message)
+          raise e
         end
 
         def prefix_inline_styles(content)
