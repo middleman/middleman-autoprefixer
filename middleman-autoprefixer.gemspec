@@ -15,10 +15,8 @@ Gem::Specification.new do |spec|
   spec.files         = `git ls-files`.split($/)
   spec.test_files    = `git ls-files -- {features,fixtures}/*`.split($/)
   spec.require_paths = ['lib']
+  spec.required_ruby_version = '>= 2.2.0'
 
-  spec.add_runtime_dependency 'middleman-core',     '>= 3.3.3'
-  spec.add_runtime_dependency 'autoprefixer-rails', '~> 9.1'
-
-  spec.add_development_dependency 'bundler',        '>= 1.14'
-  spec.add_development_dependency 'rake',           '>= 10.3'
+  spec.add_runtime_dependency 'middleman-core',     '>= 4.0.0'
+  spec.add_runtime_dependency 'autoprefixer-rails', '~> 10.0'
 end

@@ -1,3 +1,9 @@
+# v3.0.0
+
+* Updated Autoprefixer to 10.
+* Dropped support for Middleman v3.
+* Ruby 2.2.0 is now oldest supported version.
+
 # v2.10.0
 
 * Updated Autoprefixer to 9.1.
